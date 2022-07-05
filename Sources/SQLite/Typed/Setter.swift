@@ -108,19 +108,19 @@ public func +=(column: Expression<String?>, value: String) -> Setter {
 }
 
 public func +=<V: Value>(column: Expression<V>, value: Expression<V>) -> Setter where V.Datatype: Number {
-    column <- column + value
+    column <- column /+/ value
 }
 public func +=<V: Value>(column: Expression<V>, value: V) -> Setter where V.Datatype: Number {
-    column <- column + value
+    column <- column /+/ value
 }
 public func +=<V: Value>(column: Expression<V?>, value: Expression<V>) -> Setter where V.Datatype: Number {
-    column <- column + value
+    column <- column /+/ value
 }
 public func +=<V: Value>(column: Expression<V?>, value: Expression<V?>) -> Setter where V.Datatype: Number {
-    column <- column + value
+    column <- column /+/ value
 }
 public func +=<V: Value>(column: Expression<V?>, value: V) -> Setter where V.Datatype: Number {
-    column <- column + value
+    column <- column /+/ value
 }
 
 public func -=<V: Value>(column: Expression<V>, value: Expression<V>) -> Setter where V.Datatype: Number {

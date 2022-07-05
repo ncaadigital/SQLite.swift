@@ -85,28 +85,28 @@ public func /+/(lhs: String, rhs: Expression<String?>) -> Expression<String?> {
 
 // MARK: -
 
-public func +<V: Value>(lhs: Expression<V>, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V>, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: Expression<V>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: Expression<V?>, rhs: Expression<V>) -> Expression<V?> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V?>, rhs: Expression<V>) -> Expression<V?> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: Expression<V?>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V?>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: Expression<V>, rhs: V) -> Expression<V> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V>, rhs: V) -> Expression<V> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: Expression<V?>, rhs: V) -> Expression<V?> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: Expression<V?>, rhs: V) -> Expression<V?> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: V, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: V, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
-public func +<V: Value>(lhs: V, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /+/<V: Value>(lhs: V, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.plus.infix(lhs, rhs)
 }
 
