@@ -55,29 +55,31 @@ private enum Operator: String {
     }
 }
 
-public func +(lhs: Expression<String>, rhs: Expression<String>) -> Expression<String> {
+infix operator /+/ : AdditionPrecedence
+
+func /+/(lhs: Expression<String>, rhs: Expression<String>) -> Expression<String> {
     Operator.concatenate.infix(lhs, rhs)
 }
 
-public func +(lhs: Expression<String>, rhs: Expression<String?>) -> Expression<String?> {
+public func /+/(lhs: Expression<String>, rhs: Expression<String?>) -> Expression<String?> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: Expression<String?>, rhs: Expression<String>) -> Expression<String?> {
+public func /+/(lhs: Expression<String?>, rhs: Expression<String>) -> Expression<String?> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: Expression<String?>, rhs: Expression<String?>) -> Expression<String?> {
+public func  /+/(lhs: Expression<String?>, rhs: Expression<String?>) -> Expression<String?> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: Expression<String>, rhs: String) -> Expression<String> {
+public func /+/(lhs: Expression<String>, rhs: String) -> Expression<String> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: Expression<String?>, rhs: String) -> Expression<String?> {
+public func /+/(lhs: Expression<String?>, rhs: String) -> Expression<String?> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: String, rhs: Expression<String>) -> Expression<String> {
+public func /+/(lhs: String, rhs: Expression<String>) -> Expression<String> {
     Operator.concatenate.infix(lhs, rhs)
 }
-public func +(lhs: String, rhs: Expression<String?>) -> Expression<String?> {
+public func /+/(lhs: String, rhs: Expression<String?>) -> Expression<String?> {
     Operator.concatenate.infix(lhs, rhs)
 }
 
