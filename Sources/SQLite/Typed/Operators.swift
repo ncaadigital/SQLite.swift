@@ -56,6 +56,7 @@ private enum Operator: String {
 }
 
 infix operator /+/ : AdditionPrecedence
+infix operator /-/ : AdditionPrecedence
 
 func /+/(lhs: Expression<String>, rhs: Expression<String>) -> Expression<String> {
     Operator.concatenate.infix(lhs, rhs)
@@ -110,28 +111,28 @@ public func /+/<V: Value>(lhs: V, rhs: Expression<V?>) -> Expression<V?> where V
     Operator.plus.infix(lhs, rhs)
 }
 
-public func -<V: Value>(lhs: Expression<V>, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V>, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: Expression<V>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: Expression<V?>, rhs: Expression<V>) -> Expression<V?> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V?>, rhs: Expression<V>) -> Expression<V?> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: Expression<V?>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V?>, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: Expression<V>, rhs: V) -> Expression<V> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V>, rhs: V) -> Expression<V> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: Expression<V?>, rhs: V) -> Expression<V?> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: Expression<V?>, rhs: V) -> Expression<V?> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: V, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: V, rhs: Expression<V>) -> Expression<V> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
-public func -<V: Value>(lhs: V, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
+public func /-/<V: Value>(lhs: V, rhs: Expression<V?>) -> Expression<V?> where V.Datatype: Number {
     Operator.minus.infix(lhs, rhs)
 }
 
