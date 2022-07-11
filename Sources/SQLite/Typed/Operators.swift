@@ -571,13 +571,15 @@ public func ~=<V: Value>(lhs: ClosedRange<V>, rhs: Expression<V?>) -> Expression
 }
 
 public func ~=<V: Value>(lhs: Range<V>, rhs: Expression<V>) -> Expression<Bool> where V.Datatype: Comparable & Value {
+    let template: String = "\(rhs.template) >= ? AND \(rhs.template) < ?"
     let bindings: [Binding?] = rhs.bindings + [lhs.lowerBound.datatypeValue] + rhs.bindings + [lhs.upperBound.datatypeValue]
-    return Expression("\(rhs.template) >= ? AND \(rhs.template) < ?", bindings)
+    return Expression(template, bindings)
 }
 
 public func ~=<V: Value>(lhs: Range<V>, rhs: Expression<V?>) -> Expression<Bool?> where V.Datatype: Comparable & Value {
+    let template: String = "\(rhs.template) >= ? AND \(rhs.template) < ?"
     let bindings: [Binding?] = rhs.bindings + [lhs.lowerBound.datatypeValue] + rhs.bindings + [lhs.upperBound.datatypeValue]
-    return Expression("\(rhs.template) >= ? AND \(rhs.template) < ?", bindings)
+    return Expression(template, bindings)
 }
 
 public func ~=<V: Value>(lhs: PartialRangeThrough<V>, rhs: Expression<V>) -> Expression<Bool> where V.Datatype: Comparable & Value {
